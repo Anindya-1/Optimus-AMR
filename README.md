@@ -12,4 +12,12 @@ CN5 : connected to RS485-USB converter via ethernet cable.
 ##  Connection to RS485-USB conerter
 [RS485-USB Converter used](https://www.waveshare.com/usb-to-rs485.htm)
 
-connections: 
+![CN5 connection diagram](Documents/images/RS485 connection.jpg)
+![Ethernat cable wiring diagram](Documents/images/RJ45-Pinout-T568B.jpg)
+![RS485-USB converter](Documents/images/RS485-USB connector.jpg)
+
+connections at converter end:
+GND(converter) - wire2{orange}(Ethernet cable)
+A+(converter) - wire3{green striped}(Ethernet cable)
+B-(converter) - wire6{green}(Ethernet cable)
+
