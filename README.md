@@ -47,7 +47,7 @@ Note : Make sure the host and user are sharing ros2 topics.
 <!--(both systems must have same ROS_DOMAIN and RMW_IMPLEMENTATION-->
 
 
-<video src="https://github.com/Anindya-1/Optimus-AMR/blob/main/Documents/video/document_6102519452346093974.mp4" width = "180"></video>
+<video src="https://github.com/Anindya-1/Optimus-AMR/blob/main/Documents/video/document_6102519452346093974.mp4" width = 180></video>
 
 
 
