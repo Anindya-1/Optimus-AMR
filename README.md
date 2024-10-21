@@ -45,13 +45,7 @@ Step5 : For Teleoperation of the AMR use command in user terminal
 
       Note : Make sure the host and user are sharing ros2 topics.
       
-      <!--(both systems must have same ROS_DOMAIN and RMW_IMPLEMENTATION)
-      install cyclonedds on user
-      
-      add the following in bashrc of user and host system
-
-      export ROS_DOMAIN=30
-      export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp-->
+      <!--(both systems must have same ROS_DOMAIN and RMW_IMPLEMENTATION-->
 
 
 
