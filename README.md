@@ -48,7 +48,7 @@ Note : Make sure the host and user are sharing ros2 topics.
 
 
 
-https://github.com/Anindya-1/Optimus-AMR/blob/main/Documents/video/document_6102519452346093974.mp4
+[![Watch the video](https://img.youtube.com/vi/uHB8fjw6SXw/0.jpg)](https://www.youtube.com/watch?v=uHB8fjw6SXw)
 
 
 
