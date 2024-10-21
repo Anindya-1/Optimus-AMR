@@ -31,21 +31,20 @@ Step3 : Remotely connect to mira-amr over SSH.(refer to WIFI setup section in re
       
       ssh mira-amr@192.168.193.220  
 
-      pwd : FSM@2024
+pwd : FSM@2024
 
 Step4 : Run the following command in host terminal to activate the controllers .
 
       arise_mira
 
-      This command will load the robot description as well as activate the differential drive controller , LIDAR and Camera .
+This command will load the robot description as well as activate the differential drive controller , LIDAR and Camera .
       
 Step5 : For Teleoperation of the AMR use command in user terminal
 
       ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=diffbot_base_controller/cmd_vel_unstamped
 
-      Note : Make sure the host and user are sharing ros2 topics.
-      
-      <!--(both systems must have same ROS_DOMAIN and RMW_IMPLEMENTATION-->
+Note : Make sure the host and user are sharing ros2 topics.
+<!--(both systems must have same ROS_DOMAIN and RMW_IMPLEMENTATION-->
 
 
 
