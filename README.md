@@ -20,4 +20,5 @@ connections at converter end: <br />
 GND(converter) - wire2{orange}(Ethernet cable) <br />
 A+(converter) - wire3{green striped}(Ethernet cable) <br />
 B-(converter) - wire6{green}(Ethernet cable) <br />
-
+## CIRCUIT DIAGRAM FOR AMR
+![Circuit Diagram](Documents/images/aMR_circuit_diagram.jpg)
