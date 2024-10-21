@@ -43,7 +43,9 @@ Step5 : For Teleoperation of the AMR use command in user terminal
 
       ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=diffbot_base_controller/cmd_vel_unstamped
 
-      Note : Make sure the host and user are sharing ros2 topics.<!--(both systems must have same ROS_DOMAIN and RMW_IMPLEMENTATION)
+      Note : Make sure the host and user are sharing ros2 topics.
+      
+      <!--(both systems must have same ROS_DOMAIN and RMW_IMPLEMENTATION)
       install cyclonedds on user
       
       add the following in bashrc of user and host system
