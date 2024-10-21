@@ -22,3 +22,12 @@ A+(converter) - wire3{green striped}(Ethernet cable) <br />
 B-(converter) - wire6{green}(Ethernet cable) <br />
 ## CIRCUIT DIAGRAM FOR AMR
 ![Circuit Diagram](Documents/images/aMR_circuit_diagram.jpg)
+## AMR SETUP
+Step1 : Turn ON the MCB placed on the left side of AMR.
+<!--![Circuit Diagram](Documents/images/MCB_placement.jpg)-->
+Step2 : Turn ON IPC placed at the back of AMR.
+<!--![Circuit Diagram](Documents/images/IPC_power.jpg)-->
+Step3 : Remotely connect to mira-amr over SSH.(refer to WIFI setup section in readme)
+      
+
+
