@@ -28,6 +28,6 @@ Step1 : Turn ON the MCB placed on the left side of AMR.
 Step2 : Turn ON IPC placed at the back of AMR.
 <!--![Circuit Diagram](Documents/images/IPC_power.jpg)-->
 Step3 : Remotely connect to mira-amr over SSH.(refer to WIFI setup section in readme)
-      * ''' ssh mira-amr@192.168.193.220'''
+      ssh mira-amr@192.168.193.220
 
 
