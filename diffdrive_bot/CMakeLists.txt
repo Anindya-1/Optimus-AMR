@@ -12,6 +12,7 @@ find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
+find_package(sensor_manip REQUIRED)
 
 # Find libmodbus
 find_library(MODBUS_LIBRARY modbus REQUIRED)

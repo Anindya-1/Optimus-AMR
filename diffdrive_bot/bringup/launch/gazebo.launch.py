@@ -127,7 +127,13 @@ def generate_launch_description():
         launch_arguments={'world': world_file}.items()
     )
 
+    scan_update = Node(
+        package="sensor_manip",
+        executable="scan_update"
+    )
+
     return LaunchDescription([
+        scan_update,
         launch_rviz_arg,
         joint_state_broadcaster_event_handler,
         diff_drive_controller_event_handler,
@@ -135,5 +141,4 @@ def generate_launch_description():
         spawn_entity,
         gazebo,
         rviz_event_handler
-        
     ])
