@@ -1,0 +1,37 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/utkarsh/test_ws/install/realsense2_camera/include/**",
+        "/home/utkarsh/test_ws/install/realsense2_camera_msgs/include/**",
+        "/home/utkarsh/test_ws/install/diffdrive_bot/include/**",
+        "/home/utkarsh/ox_ws/install/dynamixel_hardware/include/**",
+        "/home/utkarsh/ros2_ws/install/test_modbus/include/**",
+        "/home/utkarsh/ros2_ws/install/publisher_library/include/**",
+        "/home/utkarsh/ros2_ws/install/my_robot_interfaces/include/**",
+        "/home/utkarsh/ros2_ws/install/activity_interfaces/include/**",
+        "/home/utkarsh/om_ws/install/open_manipulator_x_libs/include/**",
+        "/home/utkarsh/om_ws/install/robotis_manipulator/include/**",
+        "/home/utkarsh/om_ws/install/open_manipulator_msgs/include/**",
+        "/home/utkarsh/om_ws/install/dynamixel_workbench_toolbox/include/**",
+        "/home/utkarsh/om_ws/install/dynamixel_sdk_custom_interfaces/include/**",
+        "/home/utkarsh/om_ws/install/dynamixel_sdk/include/**",
+        "/home/utkarsh/turtlebot3_ws/install/turtlebot3_gazebo/include/**",
+        "/home/utkarsh/turtlebot3_ws/install/turtlebot3_fake_node/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/utkarsh/test_ws/src/realsense-ros-ros2-master/realsense2_camera/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
