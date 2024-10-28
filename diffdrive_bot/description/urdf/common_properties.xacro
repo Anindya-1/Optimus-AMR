@@ -6,7 +6,7 @@
     <xacro:property name="base_height" value="0.2" />
 
     <material name="blue">
-        <color rgba="0 0 0.5 0.5" />
+        <color rgba="0 0 0.5 1" />
     </material>
 
     <material name="grey">

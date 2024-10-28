@@ -35,12 +35,15 @@ import xacro
 
 
 def generate_launch_description():
-    
     pkg_name = 'diffdrive_bot'
 
-    
+    launch_rviz = LaunchConfiguration('launch_rviz')
 
-    
+    launch_rviz_arg = DeclareLaunchArgument(
+        name='launch_rviz',
+        default_value='true',
+        description='True if to launch rviz, false otherwise'
+    )
 
     world_file = os.path.join(
         get_package_share_directory(pkg_name),
@@ -57,10 +60,17 @@ def generate_launch_description():
     rviz_config = os.path.join(
       get_package_share_directory(pkg_name),
       'rviz',
-      'new_rviz_config.rviz'
+      'rviz_config.rviz'
     )
 
-    
+    rviz_node = Node(
+        package="rviz2",
+        executable="rviz2",
+        name="rviz2",
+        output="log",
+        condition=IfCondition(launch_rviz),
+        arguments=['-d', rviz_config]
+    )
 
     robot_description_raw = xacro.process_file(xacro_file).toxml()
 
@@ -73,7 +83,7 @@ def generate_launch_description():
 
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
-                                   '-entity', 'open_manipulator_x'],
+                                   '-entity', 'mira'],
                         output='screen'
                         )
 
@@ -103,7 +113,12 @@ def generate_launch_description():
         )
     )
 
-   
+    rviz_event_handler = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=diff_drive_controller_spawner,
+            on_exit=[rviz_node]
+        )
+    )
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
@@ -113,13 +128,12 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        
+        launch_rviz_arg,
         joint_state_broadcaster_event_handler,
         diff_drive_controller_event_handler,
-        
-        
         robot_state_publisher_node,
-        gazebo,
         spawn_entity,
+        gazebo,
+        rviz_event_handler
         
     ])
