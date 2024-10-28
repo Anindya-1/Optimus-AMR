@@ -6,6 +6,6 @@
     </node>
 
     <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"/>
-    <node pkg="rviz2" exec="rviz2" output="screen"/>
+    <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(find-pkg-share diffdrive_bot)/rviz/mira.rviz" />
 
 </launch>

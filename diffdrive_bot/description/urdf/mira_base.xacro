@@ -102,6 +102,54 @@
         <xacro:sphere_inertia m="0.5" r="${2*caster_wheel_radius}" 
                               xyz="0 0 0" rpy="0 0 0" />
     </link>
+    
+    <xacro:macro name="support_link" params="suffix">
+        <link name="support_${suffix}">
+            <visual>
+                <geometry>
+                    <box size="0.05 0.05 0.2" />
+                </geometry>
+                <origin xyz="0 0 0.1" rpy="0 0 0" />
+                <material name="blue" />
+            </visual>
+            <collision>
+                <geometry>
+                    <box size="0.05 0.05 0.2" />
+                </geometry>
+                <origin xyz="0 0 0.1" rpy="0 0 0" />
+            </collision>
+            <xacro:box_inertia m="1.0" l="${2*0.05}" w="${2*0.05}" h="${2*0.2}"
+                            xyz="0 0 0.1" rpy="0 0 0" />
+        </link>
+    </xacro:macro>
+
+    <xacro:support_link suffix = "1"/>
+    <joint name="chassis_support_1" type="fixed">
+            <parent link="chassis"/>
+            <child link="support_1"/>
+            <origin xyz=" ${0.3 - (0.05/2.0)} ${0.2 - (0.05/2.0)} 0.2" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:support_link suffix = "2"/>
+    <joint name="chassis_support_2" type="fixed">
+            <parent link="chassis"/>
+            <child link="support_2"/>
+            <origin xyz=" ${-0.3 + (0.05/2.0)} ${0.2 - (0.05/2.0)} 0.2" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:support_link suffix = "3"/>
+    <joint name="chassis_support_3" type="fixed">
+            <parent link="chassis"/>
+            <child link="support_3"/>
+            <origin xyz=" ${-0.3 + (0.05/2.0)} ${-0.2 + (0.05/2.0)} 0.2" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:support_link suffix = "4"/>
+    <joint name="chassis_support_4" type="fixed">
+            <parent link="chassis"/>
+            <child link="support_4"/>
+            <origin xyz=" ${0.3 - (0.05/2.0)} ${-0.2 + (0.05/2.0)} 0.2" rpy="0 0 0"/>
+    </joint>
 
     <joint name="base_footprint_base_joint" type="fixed">
         <parent link="base_link" />
