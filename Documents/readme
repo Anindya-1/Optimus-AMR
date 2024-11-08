@@ -1,7 +1,0 @@
-This folder contains the needed documents for the Differential Drive bot
-File Description:
-1. BLVM620KM-GFS(motor) operating manual : Provides basic understanding of the motor and driver connections.
-2. BLV620KM20FM-1 basic user manual : Provides in-depth understanding of the motor and driver connections along with communication accessories provided by oriental motors(MEXE02/OPX-2A).
-3. BLV620KM20FM-1 user manual(RS-485 comm mode) : Provides detailed documentation required to set up and use RS485 Modbus RTU protocol with motor driver.
-4. MEXE02 : Detailed documentation for MEXE02 software.
-5. OPX-2A : Detailed documentation for OPX-2A accessory.
