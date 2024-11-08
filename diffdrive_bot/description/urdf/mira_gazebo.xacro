@@ -19,7 +19,7 @@
       <mu2 value="0.001" />
   </gazebo>
 
-  <gazebo reference="laser_link">
+  <gazebo reference="scanner_link">
     <material>Gazebo/Red</material>
     <sensor name="laser" type="ray">
         <pose> 0 0 0 0 0 0 </pose>
@@ -43,7 +43,7 @@
                 <argument>~/out:=raw_scan</argument>
             </ros>
             <output_type>sensor_msgs/LaserScan</output_type>
-            <frame_name>laser_link</frame_name>
+            <frame_name>scanner_link</frame_name>
         </plugin>
       </sensor>
   </gazebo>

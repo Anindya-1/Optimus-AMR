@@ -1,0 +1,40 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/am/lidar_test_ws/install/pf_interfaces/local/lib/python3.10/dist-packages",
+        "/home/am/mtp_ws/install/teleop/lib/python3.10/site-packages",
+        "/home/am/mtp_ws/install/mm_interfaces/local/lib/python3.10/dist-packages",
+        "/home/am/test_ws/install/dynamixel_workbench_msgs/local/lib/python3.10/dist-packages",
+        "/home/am/test_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages",
+        "/home/am/test_ws/install/custom_pkg/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/turtlesim_catch_them_all/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/section_5/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/build/my_py_pkg",
+        "/home/am/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/actions_py/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages",
+        "/home/am/ros2_ws/install/lifecycle_py/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/executors_py/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/components_py/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/am/lidar_test_ws/install/pf_interfaces/local/lib/python3.10/dist-packages",
+        "/home/am/mtp_ws/install/teleop/lib/python3.10/site-packages",
+        "/home/am/mtp_ws/install/mm_interfaces/local/lib/python3.10/dist-packages",
+        "/home/am/test_ws/install/dynamixel_workbench_msgs/local/lib/python3.10/dist-packages",
+        "/home/am/test_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages",
+        "/home/am/test_ws/install/custom_pkg/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/turtlesim_catch_them_all/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/section_5/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/build/my_py_pkg",
+        "/home/am/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/actions_py/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages",
+        "/home/am/ros2_ws/install/lifecycle_py/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/executors_py/lib/python3.10/site-packages",
+        "/home/am/ros2_ws/install/components_py/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

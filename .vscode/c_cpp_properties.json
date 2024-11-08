@@ -1,0 +1,35 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/am/mira_ws/install/diffdrive_bot/include/**",
+        "/home/am/lidar_test_ws/install/pf_driver/include/**",
+        "/home/am/lidar_test_ws/install/pf_interfaces/include/**",
+        "/home/am/mtp_ws/install/omnidirectional_controllers/include/**",
+        "/home/am/mtp_ws/install/mm_interfaces/include/**",
+        "/home/am/test_ws/install/test_modbus/include/**",
+        "/home/am/test_ws/install/dynamixel_hardware/include/**",
+        "/home/am/test_ws/install/dynamixel_workbench_toolbox/include/**",
+        "/home/am/test_ws/install/dynamixel_workbench_msgs/include/**",
+        "/home/am/test_ws/install/dynamixel_sdk_custom_interfaces/include/**",
+        "/home/am/test_ws/install/dynamixel_sdk/include/**",
+        "/home/am/skel_ws/install/ros2_control_skel/include/**",
+        "/home/am/turtlebot3_ws/install/turtlebot3_gazebo/include/**",
+        "/home/am/turtlebot3_ws/install/turtlebot3_fake_node/include/**",
+        "/home/am/ros2_ws/install/my_robot_interfaces/include/**",
+        "/opt/ros/humble/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
