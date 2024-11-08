@@ -12,6 +12,8 @@ find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
+find_package(sensor_manip REQUIRED)
+find_package(pf_description REQUIRED)
 
 # Find libmodbus
 find_library(MODBUS_LIBRARY modbus REQUIRED)
@@ -58,7 +60,7 @@ install(
   DESTINATION include/${PROJECT_NAME}
 )
 install(DIRECTORY
-  bringup/launch bringup/config
+  bringup/launch bringup/config bringup/worlds
   DESTINATION share/${PROJECT_NAME}
 )
 install(

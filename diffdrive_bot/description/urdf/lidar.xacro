@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find pf_description)/urdf/r2000.urdf.xacro" />
+    
+    <xacro:r2000 prefix="" />
+
+    <joint name="laser_joint" type="fixed">
+        <parent link="laser_base_link"/>
+        <child link="scanner_link"/>
+        <origin xyz=" 0 0 0.05" rpy="0 0 0"/>
+    </joint>
+
+    <!-- <link name="scanner_link">
+        <visual>
+            
+            <geometry>
+                <cylinder radius="0.05" length="0.05" />
+            </geometry>
+            <origin xyz="0 0 0.025" rpy="0 0 0" />
+            <material name="red" />
+            
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.025" length="0.05" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <xacro:cylinder_inertia m="0.1" r="0.05" l="0.1" 
+                                    xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+        </collision>
+    </link> -->
+
+
+</robot>

@@ -1,23 +1,52 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     
-    <gazebo reference="base_link">
-        <material>Gazebo/Blue</material>
-    </gazebo>
+  <gazebo reference="base_link">
+      <material>Gazebo/Blue</material>
+  </gazebo>
 
-    <gazebo reference="right_wheel_link">
-        <material>Gazebo/Grey</material>
-    </gazebo>
+  <gazebo reference="right_wheel_link">
+      <material>Gazebo/Grey</material>
+  </gazebo>
 
-    <gazebo reference="left_wheel_link">
-        <material>Gazebo/Grey</material>
-    </gazebo>
+  <gazebo reference="left_wheel_link">
+      <material>Gazebo/Grey</material>
+  </gazebo>
 
-    <gazebo reference="caster_wheel_link">
-        <material>Gazebo/Grey</material>
-        <mu1 value="0.001" />
-        <mu2 value="0.001" />
-    </gazebo>
+  <gazebo reference="caster_wheel_link">
+      <material>Gazebo/Grey</material>
+      <mu1 value="0.001" />
+      <mu2 value="0.001" />
+  </gazebo>
+
+  <gazebo reference="laser_link">
+    <material>Gazebo/Red</material>
+    <sensor name="laser" type="ray">
+        <pose> 0 0 0 0 0 0 </pose>
+        <visualize>true</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>360</samples>
+                    <min_angle>-3.14</min_angle>
+                    <max_angle>3.14</max_angle>
+                </horizontal>
+            </scan>
+            <range>
+                <min>0.1</min>
+                <max>10</max>
+            </range>
+        </ray>
+        <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+                <argument>~/out:=raw_scan</argument>
+            </ros>
+            <output_type>sensor_msgs/LaserScan</output_type>
+            <frame_name>laser_link</frame_name>
+        </plugin>
+      </sensor>
+  </gazebo>
 
 <!-- ros2 control plugin -->
 <ros2_control name="GazeboSimSystem" type="system">

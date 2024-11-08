@@ -9,9 +9,19 @@
     <xacro:property name="wheel_length" value="0.05" />
     <xacro:property name="caster_wheel_radius" value="${wheel_radius / 2.0}" />
 
-    <link name="base_footprint" />
+    <link name="base_link" />
 
-    <link name="base_link">
+    <link name="base_footprint">
+    </link>
+
+    <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    
+    <link name="chassis">
         <visual>
             <geometry>
                 <box size="${base_length} ${base_width} ${base_height}" />
@@ -27,6 +37,28 @@
         </collision>
         <xacro:box_inertia m="5.0" l="${2*base_length}" w="${2*base_width}" h="${2*base_height}"
                            xyz="0 0 ${base_height / 2.0}" rpy="0 0 0" />
+    </link>
+
+    
+
+    <link name="laser_base_link">
+        <visual>
+            
+            <geometry>
+                <cylinder radius="0.05" length="0.05" />
+            </geometry>
+            <origin xyz="0 0 0.025" rpy="0 0 0" />
+            <material name="blue" />
+            
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.05" length="0.05" />
+            </geometry>
+            <origin xyz="0 0 0.025" rpy="0 0 0" />
+            <xacro:cylinder_inertia m="0.1" r="0.05" l="0.1" 
+                                    xyz="0 0 0" rpy="${pi / 2.0} 0 0" />
+        </collision>
     </link>
 
     <xacro:macro name="wheel_link" params="prefix">
@@ -70,29 +102,83 @@
         <xacro:sphere_inertia m="0.5" r="${2*caster_wheel_radius}" 
                               xyz="0 0 0" rpy="0 0 0" />
     </link>
+    
+    <xacro:macro name="support_link" params="suffix">
+        <link name="support_${suffix}">
+            <visual>
+                <geometry>
+                    <box size="0.05 0.05 0.2" />
+                </geometry>
+                <origin xyz="0 0 0.1" rpy="0 0 0" />
+                <material name="blue" />
+            </visual>
+            <collision>
+                <geometry>
+                    <box size="0.05 0.05 0.2" />
+                </geometry>
+                <origin xyz="0 0 0.1" rpy="0 0 0" />
+            </collision>
+            <xacro:box_inertia m="1.0" l="${2*0.05}" w="${2*0.05}" h="${2*0.2}"
+                            xyz="0 0 0.1" rpy="0 0 0" />
+        </link>
+    </xacro:macro>
+
+    <xacro:support_link suffix = "1"/>
+    <joint name="chassis_support_1" type="fixed">
+            <parent link="chassis"/>
+            <child link="support_1"/>
+            <origin xyz=" ${0.3 - (0.05/2.0)} ${0.2 - (0.05/2.0)} 0.2" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:support_link suffix = "2"/>
+    <joint name="chassis_support_2" type="fixed">
+            <parent link="chassis"/>
+            <child link="support_2"/>
+            <origin xyz=" ${-0.3 + (0.05/2.0)} ${0.2 - (0.05/2.0)} 0.2" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:support_link suffix = "3"/>
+    <joint name="chassis_support_3" type="fixed">
+            <parent link="chassis"/>
+            <child link="support_3"/>
+            <origin xyz=" ${-0.3 + (0.05/2.0)} ${-0.2 + (0.05/2.0)} 0.2" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:support_link suffix = "4"/>
+    <joint name="chassis_support_4" type="fixed">
+            <parent link="chassis"/>
+            <child link="support_4"/>
+            <origin xyz=" ${0.3 - (0.05/2.0)} ${-0.2 + (0.05/2.0)} 0.2" rpy="0 0 0"/>
+    </joint>
 
     <joint name="base_footprint_base_joint" type="fixed">
-        <parent link="base_footprint" />
-        <child link="base_link" />
+        <parent link="base_link" />
+        <child link="chassis" />
         <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0" />
     </joint>
 
+    <joint name="laser_base_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="laser_base_link"/>
+        <origin xyz=" 0 0 0.2" rpy="0 0 0"/>
+    </joint>
+
     <joint name="right_wheel_joint" type="continuous">
-        <parent link="base_link" />
+        <parent link="chassis" />
         <child link="right_wheel_link" />
         <origin xyz="${-base_length / 4.0} ${(-base_width / 2.0) - (wheel_length / 2.0) } 0" rpy="0 0 0" />
         <axis xyz="0 1 0" />
     </joint>
 
     <joint name="left_wheel_joint" type="continuous">
-        <parent link="base_link" />
+        <parent link="chassis" />
         <child link="left_wheel_link" />
         <origin xyz="${-base_length / 4.0} ${(base_width / 2.0) + (wheel_length / 2.0) } 0" rpy="0 0 0" />
         <axis xyz="0 1 0" />
     </joint>
 
     <joint name="base_caster_wheel_joint" type="fixed">
-        <parent link="base_link" />
+        <parent link="chassis" />
         <child link="caster_wheel_link" />
         <origin xyz="${base_length / 3.0} 0 ${-caster_wheel_radius}" rpy="0 0 0" />
     </joint>
