@@ -120,6 +120,14 @@ def generate_launch_description():
         )
     )
 
+    twist_mux_params = os.path.join(get_package_share_directory(pkg_name), 'config', 'twist_mux.yaml')
+    twist_mux = Node(
+            package="twist_mux",
+            executable="twist_mux",
+            parameters=[twist_mux_params, {'use_sim_time': True}],
+            remappings=[('/cmd_vel_out', '/diffbot_base_controller/cmd_vel_unstamped')]
+        )
+
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('gazebo_ros'), 'launch'),
@@ -139,6 +147,7 @@ def generate_launch_description():
         diff_drive_controller_event_handler,
         robot_state_publisher_node,
         spawn_entity,
+        twist_mux,
         gazebo,
         rviz_event_handler
     ])
