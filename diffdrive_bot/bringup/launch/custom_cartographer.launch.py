@@ -37,11 +37,7 @@ def generate_launch_description():
         output="screen",
         arguments=["-d", rviz_config],      
     )
-    
-    scan_update = Node(
-            package="sensor_manip",
-            executable="scan_update"
-        )
+
   
     slam = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
@@ -53,7 +49,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        scan_update,
+        # scan_update,
         slam,
         # rviz_node        
     ])
