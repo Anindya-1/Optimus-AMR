@@ -110,6 +110,11 @@ def generate_launch_description():
             on_exit=[robot_controller_spawner],
         )
     )
+    
+    # lidar_activate = Node(
+    #         package="pf_driver",
+    #         executable="r2000.launch.py"
+    #     )
 
     nodes = [
         control_node,
@@ -117,6 +122,7 @@ def generate_launch_description():
         joint_state_broadcaster_spawner,
         delay_rviz_after_joint_state_broadcaster_spawner,
         delay_robot_controller_spawner_after_joint_state_broadcaster_spawner,
+        # lidar_activate
     ]
 
     return LaunchDescription(declared_arguments + nodes)

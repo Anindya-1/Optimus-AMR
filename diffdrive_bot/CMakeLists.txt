@@ -14,6 +14,8 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(sensor_manip REQUIRED)
 find_package(pf_description REQUIRED)
+find_package(pf_driver REQUIRED)
+
 
 # Find libmodbus
 find_library(MODBUS_LIBRARY modbus REQUIRED)

@@ -16,6 +16,7 @@
   <depend>libmodbus</depend>
   <depend>sensor_manip</depend>
   <depend>pf_description</depend>
+  <depend>pf_driver</depend>
 
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>diff_drive_controller</exec_depend>
