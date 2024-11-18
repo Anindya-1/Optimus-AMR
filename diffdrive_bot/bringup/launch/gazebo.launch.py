@@ -54,7 +54,7 @@ def generate_launch_description():
     xacro_file = os.path.join(
         get_package_share_directory(pkg_name),
         'urdf',
-         'mira.urdf.xacro'
+         'mira_gazebo.urdf.xacro'
     )
 
     rviz_config = os.path.join(

@@ -8,11 +8,7 @@
 
     <!-- Import bot Gazebo_ros2_control description -->
     <xacro:include filename="lidar.xacro"/>
-
-    <!-- Import bot ros2_control description -->
-    <xacro:include filename="$(find diffdrive_bot)/ros2_control/diffbot.ros2_control.xacro" />
-
-    <xacro:bot_ros2_control name="mira" prefix="$(arg prefix)" />
+    <xacro:include filename="gazebo.xacro" />
 
     <!-- <xacro:include filename="camera.xacro" /> -->
 

@@ -18,25 +18,37 @@ private:
         for (size_t i = 0; i < scan_msg.ranges.size(); i++) {
             float angle = scan_msg.angle_min + i * scan_msg.angle_increment;
 
-            //ignore support_1 shadow region(215)(+-10 degree)
-            if (angle >= 0.4475 && angle <= 0.7975) {
+            //ignore support_1 shadow region
+            if (angle >= (65*0.01745) && angle <= (85*0.01745)) {
             // Set the filtered range value to a specific value or NaN
                 filtered_scan_msg.ranges[i] = 0.0;  // Set to 0.0 for example
             }
 
             //ignore support_2 shadow region(325)(+-10 degree)
-            if (angle >= 2.3725 && angle <= 2.7225) {
+            if (angle >= (125*0.01745) && angle <= (140*0.01745)) {
             // Set the filtered range value to a specific value or NaN
                 filtered_scan_msg.ranges[i] = 0.0;  // Set to 0.0 for example
             }
 
             //ignore support_3 shadow region(35)(+-10 degree)
-            if (angle >= -2.7025 && angle <= -2.3525) {
+            if (angle >= (155*0.01745) && angle <= (170*0.01745)) {
             // Set the filtered range value to a specific value or NaN
                 filtered_scan_msg.ranges[i] = 0.0;  // Set to 0.0 for example
             }
-            //ignore support_2 shadow region(145)(+-10 degree)
-            if (angle >= -0.7775 && angle <= -0.4275) {
+            //ignore support_4 shadow region(145)(+-10 degree)
+            if (angle >= (-170*0.01745) && angle <= (-155*0.01745)) {
+            // Set the filtered range value to a specific value or NaN
+                filtered_scan_msg.ranges[i] = 0.0;  // Set to 0.0 for example
+            }
+
+            //ignore support_5 shadow region(215)(+-10 degree)
+            if (angle >= (-140*0.01745) && angle <= (-125*0.01745)) {
+            // Set the filtered range value to a specific value or NaN
+                filtered_scan_msg.ranges[i] = 0.0;  // Set to 0.0 for example
+            }
+            
+            //ignore support_6 shadow region(215)(+-10 degree)
+            if (angle >= (-90*0.01745) && angle <= (-65*0.01745)) {
             // Set the filtered range value to a specific value or NaN
                 filtered_scan_msg.ranges[i] = 0.0;  // Set to 0.0 for example
             }
