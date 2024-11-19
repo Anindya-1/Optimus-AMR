@@ -140,5 +140,5 @@ def generate_launch_description():
         robot_state_publisher_node,
         spawn_entity,
         gazebo,
-        rviz_event_handler
+        # rviz_event_handler
     ])

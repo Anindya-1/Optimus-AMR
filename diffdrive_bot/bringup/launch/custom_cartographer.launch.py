@@ -21,7 +21,7 @@ def generate_launch_description():
     rviz_config = os.path.join(
       get_package_share_directory(pkg_name),
       'rviz',
-      'cartographer.rviz'
+      'r2000.rviz'
     )
 
     slam_config = os.path.join(
@@ -44,12 +44,11 @@ def generate_launch_description():
             get_package_share_directory('slam_toolbox'), 'launch'),
                                        '/online_async_launch.py']),
         launch_arguments={'slam_params_file': slam_config,
-                          'use_sim_time': 'true'
+                          'use_sim_time': 'false'
                           }.items()
     )
 
     return LaunchDescription([
-        # scan_update,
         slam,
-        # rviz_node        
+        rviz_node        
     ])

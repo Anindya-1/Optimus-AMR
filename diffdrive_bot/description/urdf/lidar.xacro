@@ -9,7 +9,7 @@
     <joint name="laser_joint" type="fixed">
         <parent link="laser_base_link"/>
         <child link="scanner_link"/>
-        <origin xyz=" 0 0 0.01" rpy="0 0 0"/>
+        <origin xyz=" 0.0 0 0.175" rpy="0 0 0"/>
     </joint>
 
     <!-- <link name="scanner_link">
