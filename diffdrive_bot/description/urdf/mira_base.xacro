@@ -190,7 +190,7 @@
     <joint name="chassis_laser_base_joint" type="fixed">
         <parent link="chassis"/>
         <child link="laser_base_link"/>
-        <origin xyz=" ${(base_length/2.0)-(0.05)} 0 ${base_height}" rpy="0 0 0"/>
+        <origin xyz=" ${(base_length/2.0)-(0.05+0.03)} 0 ${base_height}" rpy="0 0 0"/>
     </joint>
 
 </robot>

@@ -70,9 +70,9 @@ def generate_launch_description():
         executable="robot_state_publisher",
         output="both",
         parameters=[robot_description],
-        remappings=[
-            ("/diffbot_base_controller/cmd_vel_unstamped", "/cmd_vel"),
-        ],
+        # remappings=[
+        #     ("/diffbot_base_controller/cmd_vel_unstamped", "/cmd_vel"),
+        # ],
     )
     rviz_node = Node(
         package="rviz2",

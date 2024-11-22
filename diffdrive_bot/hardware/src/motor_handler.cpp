@@ -98,7 +98,7 @@ void MotorDriverBLVD20KM::writeRegister(int addr, int value) {
     if (modbus_write_registers(ctx_, addr, 2, data) == -1) {
         std::cerr << "Write failed: " << addr << " :" << modbus_strerror(errno) << std::endl;
     }
-    usleep(10000);
+    usleep(2500);
 }
 
 int MotorDriverBLVD20KM::readRegister(int addr) {
@@ -107,6 +107,6 @@ int MotorDriverBLVD20KM::readRegister(int addr) {
         std::cerr << "Read failed: " << addr << " :" << modbus_strerror(errno) << std::endl;
         return 0;
     }
-    usleep(10000);
+    usleep(2500);
     return bigEndianToInt(data);
 }

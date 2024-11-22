@@ -8,7 +8,7 @@
         <plugin>diffdrive_bot/DiffBotSystemHardware</plugin>
         <param name="l_drive_name">left_wheel_joint</param>
         <param name="l_serial_port">/dev/ttyACM0</param>
-        <param name="l_baud">9600</param>
+        <param name="l_baud">57600</param>
         <param name="l_stop_bit">1</param>
         <param name="l_data_bit">8</param>
         <param name="l_parity">E</param>
@@ -17,7 +17,7 @@
 
         <param name="r_drive_name">right_wheel_joint</param>
         <param name="r_serial_port">/dev/ttyACM0</param>
-        <param name="r_baud">9600</param>
+        <param name="r_baud">57600</param>
         <param name="r_stop_bit">1</param>
         <param name="r_data_bit">8</param>
         <param name="r_parity">E</param>

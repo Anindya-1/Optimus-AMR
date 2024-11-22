@@ -6,7 +6,7 @@
         "limitSymbolsToIncludedHeaders": false
       },
       "includePath": [
-        "/home/am/mira_ws/install/diffdrive_bot/include/**",
+        "/home/mira-amr/mira_ws/install/diffdrive_bot/include/**",
         "/home/am/lidar_test_ws/install/pf_driver/include/**",
         "/home/am/lidar_test_ws/install/pf_interfaces/include/**",
         "/home/am/mtp_ws/install/omnidirectional_controllers/include/**",

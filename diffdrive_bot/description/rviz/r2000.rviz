@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /LaserScan1
         - /LaserScan1/Topic1
       Splitter Ratio: 0.5
     Tree Height: 475
@@ -58,7 +59,7 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 617
+      Max Intensity: 609
       Min Color: 0; 0; 0
       Min Intensity: 32
       Name: LaserScan
@@ -73,7 +74,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Best Effort
-        Value: /pf/scan
+        Value: /scan
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -238,7 +239,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 15.228229522705078
+      Distance: 4.998762607574463
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -253,10 +254,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6203982830047607
+      Pitch: 1.1203981637954712
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.090397834777832
+      Yaw: 0.10539823770523071
     Saved: ~
 Window Geometry:
   Displays:

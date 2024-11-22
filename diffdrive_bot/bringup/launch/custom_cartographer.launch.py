@@ -35,7 +35,7 @@ def generate_launch_description():
         executable="rviz2",
         name="rviz2",
         output="screen",
-        arguments=["-d", rviz_config],      
+        arguments=["-d", rviz_config, "-f", "map"],      
     )
 
   
@@ -48,7 +48,9 @@ def generate_launch_description():
                           }.items()
     )
 
+    
+
     return LaunchDescription([
         slam,
-        rviz_node        
+        rviz_node,       
     ])
