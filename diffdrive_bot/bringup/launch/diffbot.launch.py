@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
+
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, RegisterEventHandler
 from launch.conditions import IfCondition
@@ -23,6 +26,7 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
+    pkg_name = 'diffdrive_bot'
     # Declare arguments
     declared_arguments = []
     declared_arguments.append(
@@ -110,10 +114,19 @@ def generate_launch_description():
             on_exit=[robot_controller_spawner],
         )
     )
+    
+    twist_mux_params = os.path.join(get_package_share_directory(pkg_name), 'config', 'twist_mux.yaml')
+    twist_mux = Node(
+            package="twist_mux",
+            executable="twist_mux",
+            parameters=[twist_mux_params],
+            remappings=[('/cmd_vel_out', '/diffbot_base_controller/cmd_vel_unstamped')]
+        )
 
     nodes = [
         control_node,
         robot_state_pub_node,
+        twist_mux,
         joint_state_broadcaster_spawner,
         delay_rviz_after_joint_state_broadcaster_spawner,
         delay_robot_controller_spawner_after_joint_state_broadcaster_spawner,
