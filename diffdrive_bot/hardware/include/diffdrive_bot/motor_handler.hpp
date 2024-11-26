@@ -21,7 +21,7 @@ public:
 
     void initialize(std::string serial_port, int baud, char parity, int data_bit, int stop_bit, int slave_id, int gear_ratio);
     void disconnect();
-    void setSpeed(int value);
+    void setSpeed(double value);
     double getSpeed();
     void brakeEngage();
     void brakeRelease();

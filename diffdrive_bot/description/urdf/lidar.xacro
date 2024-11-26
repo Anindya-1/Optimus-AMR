@@ -7,7 +7,7 @@
     <xacro:r2000 prefix="" />
 
     <joint name="laser_joint" type="fixed">
-        <parent link="base_footprint"/>
+        <parent link="laser_base_link"/>
         <child link="scanner_link"/>
         <origin xyz=" 0.0 0 0.110" rpy="0 0 0"/>
     </joint>

@@ -48,8 +48,9 @@ void MotorDriverBLVD20KM::disconnect() {
     writeRegister(ROTATION_SPEED_R, 0);
 }
 
-void MotorDriverBLVD20KM::setSpeed(int value) {
-    // value = static_cast<int>(value / (0.00785/(double)gear_ratio_));
+void MotorDriverBLVD20KM::setSpeed(double value) {
+    value = static_cast<int>(value * gear_ratio_ * 9.5493);
+    // std::cout << "write speed: " <<  value << std::endl;
     if (value == 0) {
         writeRegister(ROTATION_SPEED_R, 0);
         writeRegister(INPUT_CMD_R, 10);                        
@@ -67,6 +68,8 @@ void MotorDriverBLVD20KM::setSpeed(int value) {
 }
 
 double MotorDriverBLVD20KM::getSpeed() {
+    double readSpeed = readRegister(FEEDBACK_SPEED_R);
+    // std::cout << "speed: " <<  readSpeed << std::endl;
     return readRegister(FEEDBACK_SPEED_R); // * (0.00785/(double)gear_ratio_);
 }
 
